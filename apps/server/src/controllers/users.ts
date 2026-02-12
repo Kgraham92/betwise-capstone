@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import { User } from "../models/User.js";
+import type { FavoriteDoc } from "../models/User.js";
 import type { AuthRequest } from "../middleware/auth.js";
 import { auditSecurityEvent } from "../services/securityAudit.js";
 
@@ -75,11 +76,15 @@ export async function createFavorite(req: Request, res: Response) {
     teamKey,
     teamName,
     label: label ?? "",
-  });
+  } as FavoriteDoc);
 
   await user.save();
 
   const added = user.favorites[user.favorites.length - 1];
+  if (!added) {
+    return res.status(500).json({ error: "Failed to create favorite" });
+  }
+
   return res.status(201).json({ favorite: toFavoritePayload(added) });
 }
 
