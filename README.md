@@ -243,7 +243,7 @@ Deployment checklist and environment details:
 
 Live URLs:
 
-- `CLIENT_DEPLOYMENT_URL=https://betwise-capstone-client.vercel.app/`
+- `CLIENT_DEPLOYMENT_URL=https://betwise-capstone-client.vercel.app`
 - `SERVER_DEPLOYMENT_URL=https://betwise-capstone.onrender.com`
 
 ## Capstone Alignment
