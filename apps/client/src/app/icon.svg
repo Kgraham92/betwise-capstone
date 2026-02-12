@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="barGrad" x1="0" y1="40" x2="0" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5ED9CC"/>
+      <stop offset="1" stop-color="#0A2F74"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="58" y="246" width="104" height="208" rx="14" fill="url(#barGrad)"/>
+  <path d="M162 298V246H58V321.5C96.7 314.6 131.4 306.8 162 298Z" fill="url(#barGrad)"/>
+
+  <rect x="204" y="144" width="104" height="310" rx="14" fill="url(#barGrad)"/>
+  <path d="M308 212V144H204V257.5C243.4 244.6 278.1 229.4 308 212Z" fill="url(#barGrad)"/>
+
+  <rect x="350" y="42" width="104" height="412" rx="14" fill="url(#barGrad)"/>
+  <path d="M454 120V42H350V189.5C393 169.8 427.7 146.7 454 120Z" fill="url(#barGrad)"/>
+
+  <path
+    d="M18 358C96 338 164 319 223 292C282 265 332 224 383 159C407 129 428 96 447 58"
+    stroke="#FFFFFF"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

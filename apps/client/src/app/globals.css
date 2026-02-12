@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* BetWise Palette */
+  --color-brand-midnight: #020617;
+  --color-brand-surface: #0f172a;
+  --color-brand-teal: #2dd4bf;
+  --color-brand-blue: #3b82f6;
+  --color-brand-green: #10b981;
+  --color-brand-white: #f8fafc;
+  --color-brand-muted: #94a3b8;
+}
+
+:root {
+  /* Default to Dark Mode (Cyber Intelligence Theme) */
+  --background: #020617;
+  --foreground: #f8fafc;
+  --bg-top: #031045;
+  --bg-mid: #062a67;
+  --bg-bottom: #041a52;
+  --swoosh: #66d9ff;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(120% 70% at 50% 82%, rgba(54, 214, 255, 0.2), transparent 58%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 58%, var(--bg-bottom) 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(120, 180, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 180, 255, 0.08) 1px, transparent 1px);
+  background-size:
+    38px 38px,
+    38px 38px;
+  opacity: 0.22;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  left: -10%;
+  right: -10%;
+  bottom: 8%;
+  height: 42vh;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 90% at 65% 85%,
+    rgba(102, 217, 255, 0.32),
+    transparent 60%
+  );
+  mask:
+    radial-gradient(130% 120% at 50% 100%, transparent 47%, #000 48% 51%, transparent 52%),
+    radial-gradient(130% 120% at 50% 100%, transparent 53%, #000 54% 56%, transparent 57%),
+    radial-gradient(130% 120% at 50% 100%, transparent 59%, #000 60% 62%, transparent 63%);
+  -webkit-mask:
+    radial-gradient(130% 120% at 50% 100%, transparent 47%, #000 48% 51%, transparent 52%),
+    radial-gradient(130% 120% at 50% 100%, transparent 53%, #000 54% 56%, transparent 57%),
+    radial-gradient(130% 120% at 50% 100%, transparent 59%, #000 60% 62%, transparent 63%);
+  opacity: 0.9;
+  z-index: -1;
+}
