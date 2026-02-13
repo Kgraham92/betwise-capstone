@@ -4,8 +4,10 @@ This checklist tracks the final deployment requirement before capstone submissio
 
 ## Status
 
-- Frontend deployment URL: `<pending>`
-- Backend deployment URL: `<pending>`
+- Frontend deployment URL: `https://betwise-capstone-client.vercel.app`
+- Backend deployment URL: `https://betwise-capstone.onrender.com`
+- Backend health URL: `https://betwise-capstone.onrender.com/health`
+- Production smoke test: `Passed`
 
 ## Target Platforms
 
@@ -44,3 +46,10 @@ This checklist tracks the final deployment requirement before capstone submissio
 5. trends/games endpoints return data for enabled sports
 6. lint and test suites pass on final release branch
 
+## Final Verification Notes
+
+- `/health` validated at `https://betwise-capstone.onrender.com/health`
+- Auth flows validated from deployed frontend against production backend
+- Favorites CRUD validated in production
+- Account actions validated in production (change password; delete account flow available)
+- Protected endpoints verified to reject unauthenticated access

@@ -1,17 +1,19 @@
 # BetWise
 
-BetWise is a full-stack MERN capstone project focused on sports betting insights and trend analysis.  
+BetWise is a full-stack MERN capstone project focused on sports betting insights and trend analysis.
 It combines real-time odds ingestion, cached data strategy, deterministic sentiment generation, and authenticated user features in a pnpm monorepo.
 
 ## Project Overview
 
 BetWise provides:
+
 - game discovery by league/sport
 - game detail views with line movement and trend/sentiment context
 - protected trend insights and account-aware features
 - favorites tracking and account controls
 
 Current implemented product scope:
+
 - auth: register, login, logout, me, forgot password, reset password
 - games: list, detail, trends-by-game, line movement history
 - trends: aggregated highlight feed
@@ -35,23 +37,27 @@ betwise/
 ## Tech Stack
 
 ### Frontend
+
 - Next.js 16 (App Router)
 - React 19
 - TypeScript
 - Tailwind CSS v4
 
 ### Backend
+
 - Node.js + Express
 - TypeScript
 - MongoDB + Mongoose
 - Vitest + Supertest
 
 ### Shared
+
 - `@betwise/shared` workspace package for shared types and constants
 
 ## Quick Start
 
 ### Prerequisites
+
 - Node.js 18+
 - pnpm
 - MongoDB Atlas database
@@ -72,6 +78,7 @@ cp apps/server/.env.example apps/server/.env
 ```
 
 Minimum required backend values:
+
 - `JWT_SECRET`
 - `MONGODB_URI`
 - `MONGODB_DB_NAME`
@@ -105,6 +112,7 @@ pnpm --filter @betwise/server dev
 ## API Endpoints (Current)
 
 ### Auth (`/api/auth`)
+
 - `POST /register`
 - `POST /login`
 - `POST /forgot-password`
@@ -113,16 +121,19 @@ pnpm --filter @betwise/server dev
 - `GET /me` (auth required)
 
 ### Games (`/api/games`)
+
 - `GET /?sportKey=...`
 - `GET /:gameId?sportKey=...`
 - `GET /:gameId/trends?sportKey=...` (auth required)
 - `GET /:gameId/line-movement?sportKey=...` (auth required)
 
 ### Trends and Sentiment
+
 - `GET /api/trends?minPct=...` (auth required)
 - `GET /api/sentiment?...` (auth required, query-based)
 
 ### Users (`/api/users`)
+
 - `GET /me/favorites` (auth required)
 - `POST /me/favorites` (auth required)
 - `PATCH /me/favorites/:favoriteId` (auth required)
@@ -133,6 +144,7 @@ pnpm --filter @betwise/server dev
 ## Data Model Snapshot
 
 Current persisted models:
+
 - `User`
   - auth identity and password hash
   - embedded favorites list
@@ -143,12 +155,14 @@ Current persisted models:
 
 ## Sports Coverage
 
-The shared package includes NBA, NFL, NHL, MLB constants.  
+The shared package includes NBA, NFL, NHL, MLB constants.
 Current environment examples default to:
+
 - enabled: NBA, NHL
 - disabled: NFL, MLB
 
 Control flags:
+
 - `ENABLE_NBA`
 - `ENABLE_NFL`
 - `ENABLE_NHL`
@@ -157,11 +171,13 @@ Control flags:
 ## Environment Separation (dev/test/prod)
 
 Server env examples:
+
 - `apps/server/env/development.env.example`
 - `apps/server/env/test.env.example`
 - `apps/server/env/production.env.example`
 
 Isolation protections:
+
 - `NODE_ENV` aware loading in `apps/server/src/env.ts`
 - DB target safety checks in `apps/server/src/config.ts`
 - dedicated DB names per environment (`betwise_dev`, `betwise_test`, `betwise_prod`)
@@ -196,12 +212,14 @@ pnpm --filter client test
 ```
 
 ### Current status
+
 - server tests: `51` passing
 - client tests: `27` passing
 
 ## Submission Documentation
 
 Primary submission docs are in `docs/submission/`:
+
 - `RUBRIC_STATUS.md`
 - `STEP1_PROJECT_IDEAS.md`
 - `STEP2_PROJECT_PROPOSAL.md`
@@ -214,20 +232,26 @@ Primary submission docs are in `docs/submission/`:
 ## Deployment
 
 Target deployment topology:
+
 - frontend: Vercel
 - backend: Render
 - database: MongoDB Atlas
 
 Deployment checklist and environment details:
+
 - `docs/submission/DEPLOYMENT_CHECKLIST.md`
 
-When live, add final URLs to this README:
-- `CLIENT_DEPLOYMENT_URL=<pending>`
-- `SERVER_DEPLOYMENT_URL=<pending>`
+Live URLs:
+
+- `CLIENT_DEPLOYMENT_URL=https://betwise-capstone-client.vercel.app`
+- `SERVER_DEPLOYMENT_URL=https://betwise-capstone.onrender.com`
+- `SERVER_HEALTHCHECK_URL=https://betwise-capstone.onrender.com/health`
+- Production smoke test status: passed (auth, favorites CRUD, account actions, protected access)
 
 ## Capstone Alignment
 
 This project is structured to satisfy capstone requirements across:
+
 - MERN stack implementation
 - API planning and implementation
 - database model planning and CRUD

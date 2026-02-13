@@ -12,6 +12,10 @@ import { apiLimiter } from "./middleware/rateLimit.js";
 export function createApp(opts: { corsOrigin: string }) {
   const app = express();
   app.disable("x-powered-by");
+  if (process.env.NODE_ENV === "production") {
+    // Required behind Render's proxy so rate limiting can read client IP safely.
+    app.set("trust proxy", 1);
+  }
 
   // Security headers
   app.use(
