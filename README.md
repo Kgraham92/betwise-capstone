@@ -245,6 +245,8 @@ Live URLs:
 
 - `CLIENT_DEPLOYMENT_URL=https://betwise-capstone-client.vercel.app`
 - `SERVER_DEPLOYMENT_URL=https://betwise-capstone.onrender.com`
+- `SERVER_HEALTHCHECK_URL=https://betwise-capstone.onrender.com/health`
+- Production smoke test status: passed (auth, favorites CRUD, account actions, protected access)
 
 ## Capstone Alignment
 

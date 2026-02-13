@@ -11,14 +11,18 @@ This document maps Springboard capstone rubric items to concrete BetWise artifac
 | Step 3: Frontend Specifications | Complete | `docs/submission/STEP3_FRONTEND_SPEC.md` |
 | Step 4: Database Model Planning | Complete | `docs/submission/STEP4_DATABASE_MODEL.md` |
 | Step 5: API Planning | Complete | `docs/submission/STEP5_API_SPEC.md` |
-| Step 6: Build + Documentation | In progress (deployment pending) | `README.md`, `docs/submission/TECHNICAL_DOCUMENTATION.md` |
+| Step 6: Build + Documentation | Complete | `README.md`, `docs/submission/TECHNICAL_DOCUMENTATION.md`, `docs/submission/DEPLOYMENT_CHECKLIST.md` |
 
 ## High-Priority Gaps Previously Identified
 
 ### 1) Deployment evidence
 
-- Current state: **Open**
-- Notes: project deployment checklist and placeholders are documented in `README.md`; public URLs are intentionally pending final deployment cutover.
+- Current state: **Addressed**
+- Evidence:
+  - Frontend live URL: `https://betwise-capstone-client.vercel.app`
+  - Backend live URL: `https://betwise-capstone.onrender.com`
+  - Health check: `https://betwise-capstone.onrender.com/health`
+  - Production smoke test coverage recorded in `docs/submission/DEPLOYMENT_CHECKLIST.md`
 
 ### 2) MongoDB CRUD coverage
 
